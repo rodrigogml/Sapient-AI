@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Pipeline - 1. Discovery - Briefing"
+  short_description: "Discovery briefing for development pipeline"
+  default_prompt: "Use $dev-pipeline-1-discovery-briefing to guide a project discovery briefing before specs and planning."

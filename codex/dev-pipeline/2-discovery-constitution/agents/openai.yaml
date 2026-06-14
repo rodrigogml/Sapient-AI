@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Pipeline - 2. Discovery - Constitution"
+  short_description: "Project governance constitution"
+  default_prompt: "Use $dev-pipeline-2-discovery-constitution to create or update project governance principles after discovery briefing."

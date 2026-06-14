@@ -1,12 +1,12 @@
 # Sapient-AI
 
-Repositorio de definicoes, instrucoes, agents, skills e profiles para configurar e melhorar o uso de plataformas de IA, com foco inicial em Codex e Claude.
+Repositorio de definicoes, instrucoes, agents, skills e profiles para configurar e melhorar o uso de plataformas de IA, com foco inicial em Codex.
 
 Este repositorio nao e uma aplicacao executavel. Ele funciona como um acervo versionado de arquivos que orientam agentes, ferramentas e fluxos de trabalho baseados em IA.
 
 ## Proposito
 
-O objetivo do Sapient-AI e centralizar configuracoes e instrucoes reutilizaveis para evitar arquivos dispersos, facilitar evolucao incremental e manter organizacao por contexto.
+O objetivo do Sapient-AI e centralizar configuracoes e instrucoes reutilizaveis para evitar arquivos dispersos, facilitar evolucao incremental e manter uma organizacao clara por plataforma.
 
 O repositorio deve ser util desde o primeiro artefato publicado. A estrutura pode evoluir conforme surgirem novas necessidades, novos agents, novas skills e novos profiles.
 
@@ -17,7 +17,7 @@ Este repositorio deve conter:
 - instrucoes globais de usuario;
 - definicoes de agents;
 - colecoes de skills;
-- profiles e configuracoes por contexto;
+- profiles e configuracoes por plataforma;
 - instrucoes por projeto ou por tipo de projeto;
 - documentos auxiliares sobre uso, convencoes e organizacao.
 
@@ -28,35 +28,36 @@ Este repositorio nao tem como objetivo:
 - cobrir todas as plataformas de IA desde o inicio;
 - armazenar credenciais, dados sensiveis ou informacoes privadas.
 
-## Estrutura Inicial
+## Estrutura Atual
 
-A organizacao primaria deve ser por contexto e funcionalidade. Quando houver diferencas entre plataformas, a separacao por Codex, Claude ou outra ferramenta deve ficar no nivel final da estrutura.
+A organizacao primaria do repositorio e por plataforma. Dentro de cada plataforma, os artefatos sao agrupados por contexto, funcionalidade ou fluxo de trabalho.
 
 ```text
-user/
-  agents/
-  skills/
-    nome-da-habilidade/
-projects/
+codex/
+  dev-pipeline/
+    1-discovery-briefing/
+      agents/
+      references/
+      SKILL.md
+    2-discovery-constitution/
+      evals/
+      templates/
+      SKILL.md
 docs/
   01-discovery-briefing/
 ```
 
-### `user/`
+### `codex/`
 
-Agrupa instrucoes e configuracoes em nivel de usuario, aplicaveis de forma ampla e reutilizavel entre projetos.
+Agrupa artefatos especificos para Codex. Esta e a plataforma inicial e principal do repositorio.
 
-### `user/agents/`
+### `codex/dev-pipeline/`
 
-Agrupa definicoes de agents e suas funcionalidades.
+Agrupa skills, agents, referencias, templates e avaliacoes relacionadas ao pipeline de desenvolvimento usado com Codex.
 
-### `user/skills/`
+### `codex/dev-pipeline/[etapa]/`
 
-Agrupa skills por finalidade. Cada habilidade deve ter sua propria pasta quando possuir um conjunto de arquivos ou quando a separacao melhorar a manutencao.
-
-### `projects/`
-
-Agrupa instrucoes especificas para projetos ou tipos de projetos.
+Agrupa os arquivos de uma etapa especifica do pipeline. Cada etapa pode conter `SKILL.md`, referencias, templates, agents, evals ou outros arquivos exigidos pela propria skill.
 
 ### `docs/`
 
@@ -64,12 +65,15 @@ Agrupa documentacao do proprio repositorio, incluindo briefings, decisoes, conve
 
 ## Plataformas
 
-O foco inicial e:
+A plataforma inicial e:
 
 1. Codex
-2. Claude
 
-Outras plataformas podem ser adicionadas quando houver uso real ou necessidade concreta.
+Claude e outras plataformas podem ser adicionadas quando houver uso real ou necessidade concreta. Quando isso acontecer, a tendencia e criar uma pasta propria na raiz, por exemplo:
+
+```text
+claude/
+```
 
 ## Formatos
 
