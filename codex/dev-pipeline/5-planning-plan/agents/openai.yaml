@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Pipeline - 5. Planning - Plan"
+  short_description: "Create technical implementation plans"
+  default_prompt: "Use $dev-pipeline-5-planning-plan to create a technical implementation plan from a clear SDD spec."

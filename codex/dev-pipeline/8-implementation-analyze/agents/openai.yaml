@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Pipeline - 8. Implementation - Analyze"
+  short_description: "Analyze SDD artifact consistency"
+  default_prompt: "Use $dev-pipeline-8-implementation-analyze to run a read-only consistency analysis across spec, plan, tasks, checklists, and constitution."

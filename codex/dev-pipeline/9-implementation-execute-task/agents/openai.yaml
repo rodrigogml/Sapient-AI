@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Pipeline - 9. Implementation - Execute Task"
+  short_description: "Execute one backlog task"
+  default_prompt: "Use $dev-pipeline-9-implementation-execute-task to execute a selected backlog task end-to-end and update tasks.md."

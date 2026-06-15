@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Pipeline - 6. Planning - Checklist"
+  short_description: "Requirements quality gate"
+  default_prompt: "Use $dev-pipeline-6-planning-checklist to create a requirements quality checklist for an SDD feature."

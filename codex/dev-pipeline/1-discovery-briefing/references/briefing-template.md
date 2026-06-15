@@ -93,4 +93,4 @@
 
 ---
 
-**Próximo passo recomendado**: `Dev Pipeline - 1. Discovery - Constitution` para definir princípios de governança
+**Próximo passo recomendado**: `Dev Pipeline - 2. Discovery - Constitution` para definir princípios de governança

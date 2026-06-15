@@ -29,7 +29,7 @@ Não use esta skill para implementar código, revisar PR, corrigir bugs pontuais
 O resultado principal é um briefing datado salvo no projeto alvo, preferencialmente em:
 
 ```text
-docs/01-discovery-briefing/YYYYMMDD-briefing.md
+docs/briefing/YYYYMMDD-briefing.md
 ```
 
 Se já existir um briefing e o usuário não pedir sobrescrita ou mesclagem, preserve o arquivo atual e crie uma nova versão datada no mesmo diretório.
@@ -48,8 +48,8 @@ Siga este fluxo:
 6. **Salvamento**: grave o arquivo final e indique a próxima etapa do pipeline.
 
 Depois do briefing, o fluxo sugerido é:
-- `Dev Pipeline - 1. Discovery - Constitution`, ou;
-- `Dev Pipeline - 2. Specification - Specify` para features já identificadas.
+- `Dev Pipeline - 2. Discovery - Constitution`, ou;
+- `Dev Pipeline - 3. Specification - Specify` para features já identificadas.
 
 ### ETAPA 1: CONTEXTO
 
@@ -60,9 +60,9 @@ Leia os seguintes arquivos (se existirem) para entender o que já se sabe:
 SEMPRE LER (se existirem):
 -- README.md
 -- AGENTS.md
--- docs/01-discovery-briefing/*.md (briefings anteriores)
+-- docs/briefing/*.md (briefings anteriores)
 -- docs/constitution.md
--- docs/specs/spec-*.md (specs existentes)
+-- docs/specs/{feature-short-name}/spec.md (specs existentes)
 -- pom.xml, package.json, go.mod, pyproject.toml, Cargo.toml (stack técnica)
 ```
 
@@ -184,11 +184,11 @@ Deseja que eu salve este briefing? Ou há algo a corrigir/complementar?
 
 #### 6.1 Criar Diretório
 
-Se `docs/01-discovery-briefing/` não existir, criar.
+Se `docs/briefing/` não existir, criar.
 
 #### 6.2 Salvar Briefing
 
-Salvar em `docs/01-discovery-briefing/YYYYMMDD-briefing.md`.
+Salvar em `docs/briefing/YYYYMMDD-briefing.md`.
 
 Se já existe um briefing, preservar o arquivo atual e criar uma nova versão datada, exceto quando o usuário pedir explicitamente sobrescrita ou mesclagem.
 
@@ -197,15 +197,14 @@ Se já existe um briefing, preservar o arquivo atual e criar uma nova versão da
 ```markdown
 ## Briefing Salvo
 
-**Arquivo**: docs/01-discovery-briefing/YYYYMMDD-briefing.md
+**Arquivo**: docs/briefing/YYYYMMDD-briefing.md
 **Dimensões cobertas**: [N]/7
 **Itens a definir**: [N]
 
 ### Próximos Passos (fluxo SDD recomendado)
 
-1. `Dev Pipeline - 1. Discovery - Constitution` — Definir princípios de governança baseados no briefing
-2. `Dev Pipeline - 2. Specification - Specify` — Especificar features do MVP identificadas
-3. `Dev Pipeline - 2. Specification - Clarify` — Resolver ambiguidades nas specs geradas
-4. `Dev Pipeline - 3. Planning - Plan` — Gerar planos técnicos de implementação
-5. `Dev Pipeline - 3. Planning - Create Tasks` — Decompor planos em tarefas executáveis
+1. `Dev Pipeline - 2. Discovery - Constitution` — Definir princípios de governança baseados no briefing
+2. `Dev Pipeline - 3. Specification - Specify` — Especificar features do MVP identificadas
+3. `Dev Pipeline - 4. Specification - Clarify` — Resolver ambiguidades nas specs geradas
+4. `Dev Pipeline - 5. Planning - Plan` — Gerar planos técnicos de implementação
 ```

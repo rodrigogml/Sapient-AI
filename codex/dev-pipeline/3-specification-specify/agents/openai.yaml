@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Pipeline - 3. Specification - Specify"
+  short_description: "Create SDD feature specs"
+  default_prompt: "Use $dev-pipeline-3-specification-specify to turn a feature idea into a complete SDD spec."

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "_comment": "Configuração por projeto para a skill de criação de tarefas. Quando ausente, a skill usa defaults.",
+  "criticality_levels": {
+    "C": "Crítico - Impacto financeiro direto, regulatório, segurança, SLA ou operação bloqueante",
+    "A": "Alto - Funcionalidade essencial",
+    "M": "Médio - Necessário, mas sem urgência imediata"
+  },
+  "output_paths": {
+    "_comment": "spec_derived: usado quando a tarefa vem de uma spec; standalone: usado para backlogs isolados",
+    "spec_derived": "docs/specs/{feature}/tasks.md",
+    "standalone": "docs/tasks-{scope}.md"
+  },
+  "phase_prefix": "FASE",
+  "require_test_subtask": true,
+  "subtask_granularity_hours": [1, 4]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Pipeline - 4. Specification - Clarify"
+  short_description: "Refine existing SDD specs"
+  default_prompt: "Use $dev-pipeline-4-specification-clarify to resolve ambiguities in an existing SDD spec."

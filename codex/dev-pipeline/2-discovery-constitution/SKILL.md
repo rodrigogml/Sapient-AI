@@ -47,9 +47,9 @@ Leia os seguintes arquivos, se existirem, para entender o contexto:
 SEMPRE LER (se existirem):
 -- README.md
 -- AGENTS.md
--- docs/01-discovery-briefing/*.md (briefings anteriores)
+-- docs/briefing/*.md (briefings anteriores)
 -- docs/constitution.md (constituição existente)
--- docs/specs/*/spec.md (specs existentes)
+-- docs/specs/{feature-short-name}/spec.md (specs existentes)
 -- pom.xml, package.json, go.mod, pyproject.toml (stack técnica)
 ```
 
@@ -121,8 +121,8 @@ Usar `templates/constitution.md` (subdiretório `templates/` desta skill) e subs
 Após gerar a constituição, verificar alinhamento com outros artefatos:
 
 - [ ] `AGENTS.md`: princípios refletidos nas instruções do projeto?
-- [ ] `docs/specs/*/plan.md`: plans existentes referenciam princípios?
-- [ ] `docs/specs/*/tasks.md`: tasks refletem quality gates da constituição?
+- [ ] `docs/specs/{feature-short-name}/plan.md`: plans existentes referenciam princípios?
+- [ ] `docs/specs/{feature-short-name}/tasks.md`: tasks refletem quality gates da constituição?
 
 #### 4.2 Sync Impact Report
 

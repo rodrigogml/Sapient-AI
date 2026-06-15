@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Pipeline - 7. Implementation - Create Tasks"
+  short_description: "Create implementation task backlogs"
+  default_prompt: "Use $dev-pipeline-7-implementation-create-tasks to decompose an SDD plan into an executable task backlog."
