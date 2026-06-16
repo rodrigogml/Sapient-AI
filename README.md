@@ -34,15 +34,18 @@ A organizacao primaria do repositorio e por plataforma. Dentro de cada plataform
 
 ```text
 codex/
-  dev-pipeline/
-    1-discovery-briefing/
-      agents/
-      references/
-      SKILL.md
-    2-discovery-constitution/
-      evals/
-      templates/
-      SKILL.md
+  agentes/
+    README.md
+  skills/
+    dev-pipeline/
+      1-discovery-briefing/
+        agents/
+        references/
+        SKILL.md
+      2-discovery-constitution/
+        evals/
+        templates/
+        SKILL.md
 docs/
   01-discovery-briefing/
 ```
@@ -51,11 +54,19 @@ docs/
 
 Agrupa artefatos especificos para Codex. Esta e a plataforma inicial e principal do repositorio.
 
-### `codex/dev-pipeline/`
+### `codex/agentes/`
+
+Agrupa definicoes de agentes customizados para Codex. Use esta pasta para agentes independentes das skills ou para composicoes que coordenem multiplas skills.
+
+### `codex/skills/`
+
+Agrupa colecoes de skills para Codex, separando os fluxos reutilizaveis das definicoes de agentes.
+
+### `codex/skills/dev-pipeline/`
 
 Agrupa skills, agents, referencias, templates e avaliacoes relacionadas ao pipeline de desenvolvimento usado com Codex.
 
-### `codex/dev-pipeline/[etapa]/`
+### `codex/skills/dev-pipeline/[etapa]/`
 
 Agrupa os arquivos de uma etapa especifica do pipeline. Cada etapa pode conter `SKILL.md`, referencias, templates, agents, evals ou outros arquivos exigidos pela propria skill.
 
