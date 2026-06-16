@@ -1,6 +1,6 @@
 ---
 name: dev-pipeline-5-planning-plan
-description: Use after an SDD feature spec is clear when the user wants the technical HOW: architecture, technical decisions, data model, interface contracts, research, project structure, and validation scenarios. Skip when defining WHAT/for whom; use specify or clarify instead. Skip when decomposing implementation work; use create-tasks later.
+description: 'Use after an SDD feature spec is clear when the user wants the technical HOW: architecture, technical decisions, data model, interface contracts, research, project structure, and validation scenarios. Skip when defining WHAT/for whom; use specify or clarify instead. Skip when decomposing implementation work; use create-tasks later.'
 metadata:
   short-description: Create technical implementation plans
 ---
