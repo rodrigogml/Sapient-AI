@@ -47,7 +47,7 @@ codex/
         templates/
         SKILL.md
 docs/
-  01-discovery-briefing/
+  briefing/
 ```
 
 ### `codex/`
@@ -111,6 +111,4 @@ Quando uma nova estrutura, convencao ou plataforma for adicionada, prefira docum
 
 ## Discovery
 
-O briefing inicial do projeto esta em:
-
-- [`docs/01-discovery-briefing/20260614-briefing.md`](docs/01-discovery-briefing/20260614-briefing.md)
+Briefings de discovery devem ser salvos em `docs/briefing/YYYYMMDD-briefing.md`, conforme a skill `codex/skills/dev-pipeline/1-discovery-briefing/`.
