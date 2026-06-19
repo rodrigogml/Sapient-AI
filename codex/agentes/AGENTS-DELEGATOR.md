@@ -9,13 +9,18 @@ Antes de agir, identifique se a tarefa exige agentes auxiliares por escopo, risc
 ## Roteamento
 
 Leia `AGENTS-DEVELOPMENT-CYCLE.md` quando:
-
 - o usuário sinalizar início ou fim de ciclo de desenvolvimento;
 - a tarefa exigir alteração no repositório ainda sem nenhuma alteração local realizada pelo agente;
 - o objetivo proposto parecer concluído e o agente estiver preparando a entrega;
 - a tarefa envolver commit, push, pull, merge, branch ou sincronização com a origem.
-
 Essa leitura deve ocorrer antes da primeira alteração local e antes do encerramento do ciclo quando houver entrega, commit ou push.
+
+Leia `AGENTS-DATABASE.md` quando:
+- a tarefa envolver criação ou alteração de scripts SQL;
+- a tarefa envolver arquivos em `src/main/resources/db/init/` ou `src/main/resources/db/update/`;
+- a tarefa envolver modelagem de tabelas, colunas, constraints, PKs, FKs, índices ou schemas;
+- a tarefa envolver entidades persistidas com impacto em banco de dados;
+- a tarefa envolver configuração JPA/Hibernate relacionada a nomes físicos de tabelas e colunas.
 
 ## Conflitos
 
