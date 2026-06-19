@@ -266,7 +266,13 @@ Quando possível, rode:
 sh scripts/validate-tasks-template.sh docs/specs/{feature-short-name}/tasks.md --config config.json
 ```
 
-Se estiver executando fora do diretório desta skill, use o caminho completo para `scripts/validate-tasks-template.sh` e `config.json`.
+No Windows, rode a versão PowerShell equivalente:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/validate-tasks-template.ps1 docs/specs/{feature-short-name}/tasks.md --config config.json
+```
+
+Se estiver executando fora do diretório desta skill, use o caminho completo para `scripts/validate-tasks-template.sh` ou `scripts/validate-tasks-template.ps1` e `config.json`.
 
 ## ETAPA 8: SALVAMENTO
 
@@ -314,10 +320,23 @@ sh scripts/next-task-id.sh 1 tasks.md
 sh scripts/next-task-id.sh 1.2 tasks.md
 ```
 
+No Windows, use `scripts/next-task-id.ps1`:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/next-task-id.ps1 1 tasks.md
+powershell -ExecutionPolicy Bypass -File scripts/next-task-id.ps1 1.2 tasks.md
+```
+
 - `scripts/validate-tasks-template.sh` valida conformidade estrutural com `templates/tasks.md`.
 
 ```bash
 sh scripts/validate-tasks-template.sh docs/specs/foo/tasks.md --config config.json
+```
+
+No Windows, use `scripts/validate-tasks-template.ps1`:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/validate-tasks-template.ps1 docs/specs/foo/tasks.md --config config.json
 ```
 
 ## Gotchas
@@ -348,4 +367,4 @@ Escopo excluído é algo explicitamente fora deste backlog e precisa de justific
 
 ### Template drift é silencioso
 
-Quando o backlog é produzido sem seguir `templates/tasks.md`, é fácil omitir checkboxes, legendas, matriz de dependências, resumo quantitativo ou seções de escopo. Rode `scripts/validate-tasks-template.sh` quando gerar ou revisar um `tasks.md`.
+Quando o backlog é produzido sem seguir `templates/tasks.md`, é fácil omitir checkboxes, legendas, matriz de dependências, resumo quantitativo ou seções de escopo. Rode `scripts/validate-tasks-template.sh` ou, no Windows, `scripts/validate-tasks-template.ps1` quando gerar ou revisar um `tasks.md`.
