@@ -7,9 +7,16 @@ Define o comportamento do Codex em ciclos de implementação, manutenção ou co
 Leia estas instruções quando:
 
 - o usuário sinalizar início ou fim de ciclo de desenvolvimento;
+- o usuário pedir para "baixar o código", "baixasse o código", "puxar o código", "atualizar o código", "subir o código", "subisse o código", "enviar o código", "publicar o código" ou usar expressão equivalente de sincronização com a origem;
 - a tarefa exigir alteração no repositório ainda sem nenhuma alteração local realizada pelo agente;
 - o agente concluir, por critérios objetivos, que o objetivo proposto foi atingido;
 - a tarefa envolver commit, push, pull, merge, branch ou sincronização com a origem.
+
+## Vocabulário Operacional
+
+- "Baixar o código", "baixasse o código", "puxar o código" ou "atualizar o código" indicam sincronizar o repositório local com a origem remota. Execute `git fetch`, compare o branch local com o branch remoto rastreado e aplique `git pull`/merge quando necessário e seguro. Se houver alterações locais que possam ser afetadas ou conflitos de merge, preserve o trabalho local e apresente o impedimento antes de continuar.
+- "Subir o código", "subisse o código", "enviar o código" ou "publicar o código" indicam autorização para enviar toda a alteração local do repositório atual para a origem remota. Verifique o estado do repositório, revise o escopo, adicione todos os arquivos locais pertinentes com `git add`, execute validações cabíveis, crie commit, sincronize com a origem com `fetch` e `pull`/merge quando necessário, resolva apenas merges seguros e sem conflito, e então execute `git push`.
+- Quando o usuário pedir para "subir o código", trate a autorização como abrangente para todas as alterações locais do repositório atual, inclusive arquivos novos, exceto arquivos claramente sensíveis, gerados indevidamente, ignoráveis ou fora do escopo técnico do repositório. Se houver dúvida sobre algum arquivo, pergunte antes de incluí-lo.
 
 ## Início
 

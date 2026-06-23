@@ -10,6 +10,7 @@ Antes de agir, identifique se a tarefa exige agentes auxiliares por escopo, risc
 
 Leia `AGENTS-DEVELOPMENT-CYCLE.md` quando:
 - o usuário sinalizar início ou fim de ciclo de desenvolvimento;
+- o usuário usar expressões operacionais de sincronização, como "baixar o código", "baixasse o código", "puxar o código", "atualizar o código", "subir o código", "subisse o código", "enviar o código", "publicar o código" ou equivalentes;
 - a tarefa exigir alteração no repositório ainda sem nenhuma alteração local realizada pelo agente;
 - o objetivo proposto parecer concluído e o agente estiver preparando a entrega;
 - a tarefa envolver commit, push, pull, merge, branch ou sincronização com a origem.
