@@ -28,6 +28,11 @@ Leia `AGENTS-JAVA-SPRING-BOOT.md` quando:
 - a tarefa envolver criação, revisão ou reorganização da estrutura de repositório Maven/Spring Boot;
 - a tarefa envolver configuração geral de projeto, `pom.xml`, `application.properties`, `src/` ou `docs/` em projeto Spring Boot.
 
+Leia `AGENTS-JAVA-CODING.md` quando:
+- a tarefa envolver criação, alteração ou revisão de código Java;
+- a tarefa envolver nomenclatura, imports, tipos, classes, métodos, comentários, Javadoc, enums, DTOs, VOs, entities ou utility classes em Java;
+- a tarefa envolver criação, alteração ou revisão de testes Java.
+
 ## Conflitos
 
 Se houver conflito entre agentes, aplique a instrução mais específica. Se o conflito afetar ação irreversível ou risco relevante, apresente a divergência ao usuário antes de agir.
