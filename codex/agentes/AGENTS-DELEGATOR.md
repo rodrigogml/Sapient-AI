@@ -23,6 +23,11 @@ Leia `AGENTS-DATABASE.md` quando:
 - a tarefa envolver entidades persistidas com impacto em banco de dados;
 - a tarefa envolver configuração JPA/Hibernate relacionada a nomes físicos de tabelas e colunas.
 
+Leia `AGENTS-JAVA-SPRING-BOOT.md` quando:
+- a tarefa envolver projeto Java baseado em Spring Boot;
+- a tarefa envolver criação, revisão ou reorganização da estrutura de repositório Maven/Spring Boot;
+- a tarefa envolver configuração geral de projeto, `pom.xml`, `application.properties`, `src/` ou `docs/` em projeto Spring Boot.
+
 ## Conflitos
 
 Se houver conflito entre agentes, aplique a instrução mais específica. Se o conflito afetar ação irreversível ou risco relevante, apresente a divergência ao usuário antes de agir.
