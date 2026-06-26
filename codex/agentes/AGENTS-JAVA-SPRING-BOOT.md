@@ -133,3 +133,84 @@ Use a estrutura padrão do Maven como base:
 - `service` contém lógica de negócio atômica.
 - `facade` publica operações completas e coordena services quando necessário.
 - Testes em `src/test/java` devem espelhar o package da classe testada.
+
+## Sufixos de Classes
+
+- `Entity`: modelo persistido JPA, restrito ao backend.
+- `Repository`: acesso a dados, sempre baseado em `Entity`.
+- `Service`: regra de negócio atômica.
+- `Facade`: contrato público de operação completa.
+- `FacadeImpl`: implementação backend de uma `Facade`.
+- `DTO`: objeto mutável de transporte.
+- `VO`: valor imutável, preferencialmente `record`.
+- `Enum`: enumeração em classe própria.
+- `View`: rota ou tela.
+- `Component`: componente visual reutilizável.
+- `Config`: configuração Spring, UI ou infraestrutura.
+
+## Transações
+
+- `controller` não controla transação.
+- `repository` não declara regra transacional de negócio.
+- Defina a fronteira transacional em `facade` ou `service`, conforme o caso de uso consolidado no projeto.
+- Métodos de consulta devem usar transação read-only quando houver acesso persistente.
+- Operações de escrita devem ter transação explícita na borda que coordena a operação completa.
+
+## DTO, VO e Entity
+
+- `Entity` nunca deve ser exposta para `api`, `ui` ou clientes externos.
+- `DTO` transporta dados mutáveis entre camadas, API e fachadas.
+- `VO` representa valor fechado e imutável; use `record`.
+- Conversões entre `Entity`, `DTO` e `VO` devem ocorrer no backend.
+- Não coloque regra de negócio em `DTO`, `VO` ou `Entity`.
+
+## Validação
+
+- Bean Validation pertence a `DTO` quando a regra for estrutural.
+- Regras de negócio pertencem a `service`.
+- Unicidade deve ser validada em `service`/`repository` e, quando aplicável, reforçada por constraint no banco.
+- `controller` valida apenas contrato de entrada necessário para delegar.
+
+## Persistência
+
+- `repository` deve estender `JpaRepository<Entity, PK>`.
+- `repository` manipula apenas `Entity`.
+- `repository` não contém regra de negócio.
+- Alterações persistentes devem respeitar o agente de banco de dados quando envolverem schema, tabelas, colunas, constraints ou scripts SQL.
+
+## Controllers REST
+
+- `controller` deve ser fino e delegar para `facade`.
+- Paths devem ser estáveis, em lowercase e orientados a recurso.
+- Requests e responses devem usar `DTO`/`VO`, nunca `Entity`.
+- Tratamento de erro deve retornar contrato consistente, baseado em exceptions de `shared.exception`.
+
+## Testes
+
+- Testes ficam em `src/test/java` no mesmo package da classe testada.
+- Teste unitário usa sufixo `Test`.
+- Teste de integração usa sufixo `IT`.
+- Não crie testes sem solicitação explícita.
+- Quando criar testes, cubra comportamento observável e contratos, não detalhes internos triviais.
+
+## Configuração Spring
+
+- Use `@ConfigurationProperties` para grupos de configuração tipados.
+- Classes `Config` devem ficar no package `config` do escopo configurado.
+- Beans devem ser declarados no menor escopo aplicável.
+- Configurações devem estar refletidas em `application.properties.model`.
+- Não duplique configuração entre código e properties.
+
+## Javadoc
+
+- Javadoc deve documentar contrato útil: finalidade, entradas, retornos, exceções e restrições.
+- Métodos públicos devem ter Javadoc quando o contrato não for óbvio.
+- Preserve Javadocs existentes.
+- Não use Javadoc para histórico de alteração; isso pertence ao Git.
+
+## I18n
+
+- Textos visíveis ao usuário devem usar i18n.
+- Chaves devem ser estáveis e agrupadas por contexto funcional.
+- Enums expostas devem ter chave no padrão `enum.<SimpleName>.<VALUE>`.
+- Não espalhe texto fixo de UI, validação ou erro em código.
