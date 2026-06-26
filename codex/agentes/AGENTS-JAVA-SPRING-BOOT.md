@@ -51,10 +51,7 @@ Use a estrutura padrão do Maven como base:
 
 - Package base: `<group>.<project>`, sempre em lowercase e sem underscores.
 - A classe principal Spring Boot deve ficar diretamente no package base.
-- Packages devem ser singulares, por contexto/responsabilidade, sem agrupadores genéricos.
 - Use `module` para agrupar módulos de negócio.
-- Exceções ao singular: use `enums` e `interfaces`, pois `enum` e `interface` são palavras reservadas do Java.
-- Use `util`, nunca `utils`.
 
 ### Acesso entre Packages
 
@@ -134,20 +131,6 @@ Use a estrutura padrão do Maven como base:
 - `facade` publica operações completas e coordena services quando necessário.
 - Testes em `src/test/java` devem espelhar o package da classe testada.
 
-## Sufixos de Classes
-
-- `Entity`: modelo persistido JPA, restrito ao backend.
-- `Repository`: acesso a dados, sempre baseado em `Entity`.
-- `Service`: regra de negócio atômica.
-- `Facade`: contrato público de operação completa.
-- `FacadeImpl`: implementação backend de uma `Facade`.
-- `DTO`: objeto mutável de transporte.
-- `VO`: valor imutável, preferencialmente `record`.
-- `Enum`: enumeração em classe própria.
-- `View`: rota ou tela.
-- `Component`: componente visual reutilizável.
-- `Config`: configuração Spring, UI ou infraestrutura.
-
 ## Transações
 
 - `controller` não controla transação.
@@ -159,8 +142,7 @@ Use a estrutura padrão do Maven como base:
 ## DTO, VO e Entity
 
 - `Entity` nunca deve ser exposta para `api`, `ui` ou clientes externos.
-- `DTO` transporta dados mutáveis entre camadas, API e fachadas.
-- `VO` representa valor fechado e imutável; use `record`.
+- Requests, responses, contratos de facade e transporte entre camadas devem usar `DTO` ou `VO`.
 - Conversões entre `Entity`, `DTO` e `VO` devem ocorrer no backend.
 - Não coloque regra de negócio em `DTO`, `VO` ou `Entity`.
 
@@ -188,10 +170,7 @@ Use a estrutura padrão do Maven como base:
 ## Testes
 
 - Testes ficam em `src/test/java` no mesmo package da classe testada.
-- Teste unitário usa sufixo `Test`.
-- Teste de integração usa sufixo `IT`.
-- Não crie testes sem solicitação explícita.
-- Quando criar testes, cubra comportamento observável e contratos, não detalhes internos triviais.
+- Convenções de nomenclatura, estrutura e escopo dos testes Java seguem `AGENTS-JAVA-CODING.md`.
 
 ## Configuração Spring
 
@@ -201,16 +180,8 @@ Use a estrutura padrão do Maven como base:
 - Configurações devem estar refletidas em `application.properties.model`.
 - Não duplique configuração entre código e properties.
 
-## Javadoc
-
-- Javadoc deve documentar contrato útil: finalidade, entradas, retornos, exceções e restrições.
-- Métodos públicos devem ter Javadoc quando o contrato não for óbvio.
-- Preserve Javadocs existentes.
-- Não use Javadoc para histórico de alteração; isso pertence ao Git.
-
 ## I18n
 
 - Textos visíveis ao usuário devem usar i18n.
 - Chaves devem ser estáveis e agrupadas por contexto funcional.
-- Enums expostas devem ter chave no padrão `enum.<SimpleName>.<VALUE>`.
 - Não espalhe texto fixo de UI, validação ou erro em código.

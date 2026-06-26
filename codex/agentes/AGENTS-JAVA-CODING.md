@@ -15,6 +15,9 @@ Define regras de escrita, nomenclatura, documentação e testes para código Jav
 - Métodos, variáveis, campos e parâmetros: `camelCase`.
 - Constantes: `UPPER_SNAKE_CASE`.
 - Packages: lowercase, sem underscores.
+- Prefira package no singular.
+- Exceções ao singular: use `enums` e `interfaces`, pois `enum` e `interface` são palavras reservadas do Java.
+- Use `util`, nunca `utils`.
 - Arquivos Java devem ter o mesmo nome da classe pública.
 - Não use abreviações obscuras.
 - Não use nomes genéricos quando houver conceito de domínio claro.
@@ -77,9 +80,8 @@ Define regras de escrita, nomenclatura, documentação e testes para código Jav
 ## DTO, VO e Entity
 
 - `DTO` é mutável, transporta dados e não contém regra de negócio.
-- `DTO` pode usar Bean Validation para validação estrutural.
 - `VO` é imutável, definido preferencialmente como `record` e sem setters.
-- `Entity` representa persistência e não deve ser exposta para UI, API ou consumidores externos.
+- `Entity` representa persistência e não contém regra de apresentação ou contrato externo.
 - Não coloque acesso a `Service` ou `Repository` em `DTO`, `VO` ou `Entity`.
 - Não referencie atributos de `DTO` ou `VO` por string literal quando houver metaobject disponível.
 
@@ -93,7 +95,7 @@ Define regras de escrita, nomenclatura, documentação e testes para código Jav
 ## Testes Java
 
 - Não crie testes sem solicitação explícita.
-- Testes ficam em `src/test/java` no mesmo package da classe testada.
+- Testes devem ficar no mesmo package da classe testada; a pasta física segue o padrão do projeto.
 - Classe de teste unitário: `<ClasseTestada>Test`.
 - Classe de teste de integração: `<ClasseTestada>IT`.
 - Não use prefixos ou sufixos alternativos.
