@@ -1,0 +1,1 @@
+- Realize toda nova alteração em uma branch própria e integre-a ao `main` exclusivamente por pull request.
