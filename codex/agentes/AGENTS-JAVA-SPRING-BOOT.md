@@ -44,7 +44,7 @@ Use a estrutura padrão do Maven como base:
 - Mantenha `application.properties.model` na mesma pasta de `application.properties`.
 - `application.properties.model` deve ser versionado, conter comentários objetivos sobre cada atributo e usar valores sugeridos ou padrões de preenchimento.
 - `application.properties` deve conter valores reais do ambiente local, de homologação ou de produção.
-- Ao encontrar os dois arquivos, mantenha ambos sincronizados e com os atributos na mesma ordem.
+- Ao encontrar os dois arquivos, mantenha ambos sincronizados e com os atributos e comentários na mesma ordem.
 - O cabeçalho dos dois arquivos deve informar que eles precisam permanecer sincronizados: o `.model` documenta e sugere valores; o `application.properties` contém os valores reais do ambiente.
 
 ## Packages
