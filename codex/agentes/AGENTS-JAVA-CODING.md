@@ -48,14 +48,15 @@ Define regras de escrita, nomenclatura, documentação e testes para código Jav
 - `View`: rota ou tela.
 - `Component`: componente visual reutilizável.
 - `Interface`: uso restrito para interfaces que não representem API exposta.
-- `BU`: prefixo para utility class estática.
+- `Util`: prefixo para utility class estática.
 
 ## Javadoc e Comentários
 
 - Preserve Javadocs existentes, `@author`, `@since` e comentários úteis.
 - Não remova Javadoc de método.
 - Javadoc de classe deve declarar objetivo, escopo e responsabilidade.
-- Se `@author` estiver ausente, inclua `@author RodrigoGML`.
+- Se `@author` estiver ausente, use o autor definido nas instruções aplicáveis do usuário ou do projeto.
+- Se nenhum autor estiver definido, não invente um valor, questione e solicite que o usuário defina no aquivo de AGENTS.md pessoal.
 - Se `@since` estiver ausente, inclua `@since YYYY-MM-DD`.
 - Todo tipo público deve possuir Javadoc: classe, interface, enum, record ou annotation.
 - Todo método não `private` deve possuir Javadoc completo.

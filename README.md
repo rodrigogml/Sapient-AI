@@ -4,6 +4,9 @@ Repositorio de definicoes, instrucoes, agents, skills e profiles para configurar
 
 Este repositorio nao e uma aplicacao executavel. Ele funciona como um acervo versionado de arquivos que orientam agentes, ferramentas e fluxos de trabalho baseados em IA.
 
+> [!NOTE]
+> O Sapient-AI tem como base as skills e funcionalidades do [Claude Code Toolkit (cstk)](https://github.com/JotJunior/cstk), projeto criado e mantido por [João Zanon (JotJunior)](https://github.com/JotJunior). O projeto de origem é distribuído sob a [licença MIT](https://github.com/JotJunior/cstk/blob/main/LICENSE).
+
 ## Proposito
 
 O objetivo do Sapient-AI e centralizar configuracoes e instrucoes reutilizaveis para evitar arquivos dispersos, facilitar evolucao incremental e manter uma organizacao clara por plataforma.
