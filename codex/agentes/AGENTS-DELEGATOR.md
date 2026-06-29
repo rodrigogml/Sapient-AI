@@ -20,7 +20,7 @@ Leia `AGENTS-DATABASE.md` quando:
 - a tarefa envolver criação ou alteração de scripts SQL;
 - a tarefa envolver arquivos em `src/main/resources/db/init/` ou `src/main/resources/db/update/`;
 - a tarefa envolver banco de dados MySQL;
-- a tarefa envolver modelagem de tabelas, colunas, constraints, PKs, FKs, índices ou schemas;
+- a tarefa envolver modelagem de schemas, tabelas, colunas, constraints, PKs, FKs, índices, views, procedures, functions, triggers ou events;
 - a tarefa envolver entidades persistidas com impacto em banco de dados;
 - a tarefa envolver configuração JPA/Hibernate relacionada a nomes físicos de tabelas e colunas.
 
