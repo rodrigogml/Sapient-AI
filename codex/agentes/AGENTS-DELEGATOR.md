@@ -34,6 +34,11 @@ Leia `AGENTS-JAVA-CODING.md` quando:
 - a tarefa envolver nomenclatura, imports, tipos, classes, métodos, comentários, Javadoc, enums, DTOs, VOs, entities ou utility classes em Java;
 - a tarefa envolver criação, alteração ou revisão de testes Java.
 
+Leia `AGENTS-TASK-IMPLEMENTATION.md` quando:
+- o usuário pedir para procurar, executar, implementar ou concluir tarefas pendentes de backlog;
+- o usuário pedir para iterar por tarefas não implementadas até concluir tudo que for possível;
+- o trabalho envolver implementação orientada por `tasks.md` ou documentação equivalente já existente.
+
 ## Conflitos
 
 Se houver conflito entre agentes, aplique a instrução mais específica. Se o conflito afetar ação irreversível ou risco relevante, apresente a divergência ao usuário antes de agir.
