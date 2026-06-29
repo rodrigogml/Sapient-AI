@@ -37,3 +37,17 @@ Leia `AGENTS-JAVA-CODING.md` quando:
 ## Conflitos
 
 Se houver conflito entre agentes, aplique a instrução mais específica. Se o conflito afetar ação irreversível ou risco relevante, apresente a divergência ao usuário antes de agir.
+
+## Delegação de Skills
+
+Use `dev-pipeline-1-discovery-briefing` quando o usuário quiser iniciar um projeto do zero, organizar sua documentação inicial ou alinhar o contexto antes de especificar features.
+
+Use `dev-pipeline-3-specification-specify` quando o usuário quiser descrever e começar o desenvolvimento de uma nova feature que ainda precisa de especificação funcional.
+
+Use `dev-pipeline-4-specification-clarify` quando o usuário quiser alterar, melhorar ou refinar uma feature já existente a partir de uma spec atual.
+
+Use `dev-pipeline-7-implementation-create-tasks` quando uma alteração ou melhoria já estiver clara e precisar virar backlog executável.
+
+Use `dev-pipeline-9-implementation-execute-task` quando a alteração ou melhoria já estiver representada em uma tarefa existente do backlog.
+
+Use `dev-pipeline-11-implementation-bugfix` quando o usuário relatar problema, erro, falha, bug ou mau funcionamento do sistema.
