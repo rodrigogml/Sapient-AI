@@ -68,7 +68,8 @@ spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.Ph
 - Separe scripts iniciais em:
   - `01-ddl.sql`: database/schema, charset, collation, usuários, permissões básicas e estrutura do banco.
   - `02-seed.sql`: dados obrigatórios para o sistema iniciar.
-  - `03-dev-test-data.sql`: dados apenas para desenvolvimento, teste local ou homologação.
+  - `03-procedures.sql`: procedures armazenadas necessárias para a base inicial.
+  - `04-dev-test-data.sql`: dados apenas para desenvolvimento, teste local ou homologação.
 - Scripts de criação representam uma base nova já atualizada.
 - Toda alteração estrutural deve ser refletida no script de criação.
 - Não use `USE`.
