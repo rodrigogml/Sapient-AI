@@ -69,6 +69,42 @@ Agrupa colecoes de skills para Codex, separando os fluxos reutilizaveis das defi
 
 Agrupa skills, agents, referencias, templates e avaliacoes relacionadas ao pipeline de desenvolvimento usado com Codex.
 
+## Fluxo Dev Pipeline
+
+O conjunto `codex/skills/dev-pipeline/` documenta um fluxo SDD completo para conduzir trabalho de desenvolvimento com Codex, desde discovery ate execucao, revisao e correcao de bugs. A regra geral e avancar de contexto para governanca, requisitos, planejamento, backlog e implementacao, usando analises read-only como gates antes de alterar codigo.
+
+```mermaid
+flowchart TD
+    A["1. Discovery - Briefing"] --> B["2. Discovery - Constitution"]
+    B --> C["3. Specification - Specify"]
+    C --> D["4. Specification - Clarify"]
+    D --> E["5. Planning - Plan"]
+    E --> F["6. Planning - Checklist"]
+    F --> G["7. Implementation - Create Tasks"]
+    G --> H["8. Implementation - Analyze"]
+    H --> I["9. Implementation - Execute Task"]
+    I --> J["10. Implementation - Review Task"]
+    I --> K["11. Implementation - Bugfix"]
+    K --> D
+    K --> H
+```
+
+Resumo das etapas:
+
+- `1-discovery-briefing`: captura visao, usuarios, escopo, restricoes, contexto tecnico, qualidade e evolucao esperada.
+- `2-discovery-constitution`: transforma o contexto em principios de governanca, qualidade, arquitetura e processo.
+- `3-specification-specify`: cria uma spec funcional focada no que a feature deve entregar e por que ela existe.
+- `4-specification-clarify`: resolve ambiguidades de uma spec existente e integra as respostas no proprio documento.
+- `5-planning-plan`: define o como tecnico, incluindo arquitetura, pesquisa, modelo de dados, contratos e quickstart.
+- `6-planning-checklist`: valida a qualidade dos requisitos escritos, sem testar implementacao.
+- `7-implementation-create-tasks`: converte spec, plano e gaps de checklist em um backlog executavel.
+- `8-implementation-analyze`: cruza artefatos em modo read-only para detectar drift, gaps, duplicidades e violacoes de governanca.
+- `9-implementation-execute-task`: executa uma tarefa do backlog ponta a ponta, valida e sincroniza o `tasks.md`.
+- `10-implementation-review-task`: revisa progresso, bloqueios, inconsistencias e proximas tarefas recomendadas.
+- `11-implementation-bugfix`: investiga e corrige bugs rastreando o fluxo completo antes de aplicar patches.
+
+Para mudancas pequenas, o pipeline nao precisa ser aplicado integralmente. A triagem da propria etapa `3-specification-specify` deve indicar quando executar direto, usar bugfix, criar ADR ou seguir o fluxo SDD completo.
+
 ### `codex/skills/dev-pipeline/[etapa]/`
 
 Agrupa os arquivos de uma etapa especifica do pipeline. Cada etapa pode conter `SKILL.md`, referencias, templates, agents, evals ou outros arquivos exigidos pela propria skill.
