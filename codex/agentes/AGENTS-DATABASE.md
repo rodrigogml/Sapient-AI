@@ -70,13 +70,15 @@ spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.Ph
   - `02-seed.sql`: dados obrigatórios para o sistema iniciar.
   - `03-procedures.sql`: procedures armazenadas necessárias para a base inicial.
   - `04-dev-test-data.sql`: dados apenas para desenvolvimento, teste local ou homologação.
-- O `01-ddl.sql` deve iniciar com uma linha comentada sugerindo o `CREATE DATABASE` com o nome esperado do database/schema e com `CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci`.
+- A primeira linha do `01-ddl.sql` deve ser somente um comentário com a sugestão de `CREATE DATABASE` usando o nome esperado do database/schema e `CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci`.
+- O `01-ddl.sql` não deve conter `CREATE DATABASE` descomentado em nenhum ponto do arquivo.
 - Essa sugestão comentada deve deixar claro onde charset e collation são definidos, evitando repeti-los nos `CREATE TABLE`.
 - Scripts de criação representam uma base nova já atualizada.
 - Toda alteração estrutural deve ser refletida no script de criação.
 - Não use `USE`.
 - Não use `IF NOT EXISTS` em `CREATE TABLE`.
-- Não inclua schema no nome da tabela, exceto quando o projeto exigir referência entre schemas.
+- Não qualifique tabelas, views, procedures, functions, triggers, events ou outros objetos com o nome do schema nos comandos SQL.
+- A única exceção é referência entre schemas exigida pelo projeto, como vínculo de schema tenant para schema global/principal.
 
 ## Scripts de Atualização
 
