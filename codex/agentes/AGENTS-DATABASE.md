@@ -30,7 +30,7 @@ Use este agente para:
 
 - Database/schema deve usar `CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci`.
 - Defina charset e collation no `CREATE DATABASE`, não em cada `CREATE TABLE`.
-- Tabelas devem finalizar com `ENGINE=InnoDB`.
+- Todo `CREATE TABLE` deve definir o atributo `ENGINE` como `InnoDB`, salvo quando explicitado o contrário.
 - Não declare `CHARSET` ou `COLLATE` em `CREATE TABLE`.
 
 ## Chaves e Relacionamentos
@@ -70,6 +70,8 @@ spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.Ph
   - `02-seed.sql`: dados obrigatórios para o sistema iniciar.
   - `03-procedures.sql`: procedures armazenadas necessárias para a base inicial.
   - `04-dev-test-data.sql`: dados apenas para desenvolvimento, teste local ou homologação.
+- O `01-ddl.sql` deve iniciar com uma linha comentada sugerindo o `CREATE DATABASE` com o nome esperado do database/schema e com `CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci`.
+- Essa sugestão comentada deve deixar claro onde charset e collation são definidos, evitando repeti-los nos `CREATE TABLE`.
 - Scripts de criação representam uma base nova já atualizada.
 - Toda alteração estrutural deve ser refletida no script de criação.
 - Não use `USE`.
